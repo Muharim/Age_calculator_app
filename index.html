@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Outfit:wght@400;700&family=Poppins:ital,wght@0,700;1,400;1,800&family=Roboto:wght@400;500;700&display=swap');
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            offWhite: 'hsl(0, 0%, 90%)', 
+            smokeGray: 'hsl(0, 1%, 44%)',
+            light: 'hsl(0, 0%, 86%)',
+            purple: 'hsl(259, 100%, 65%)'
+          },
+          fontFamily: {
+            'Hanken': ['"Hanken Grotesk"', 'sans-serif'],
+            'Poppins': ['"Poppins"', 'sans-serif'],
+          },
+          screen: {
+            'Laptop' : '1440px',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body class="bg-offWhite flex items-center flex-col pt-20 h-screen md:bg-white">
+  <div class="flex items-center flex-col w-[92%] bg-white justify-center rounded-3xl rounded-br-[100px]">
+    <form class="h-fit font-Hanken px-6">
+      <div class="flex items-center flex-row gap-4 pt-12 pb-16 border-b">
+        <div>
+          <label for="hari" class="tracking-[3px] text-smokeGray text-[14px] font-extrabold">DAY</label><br> 
+          <input class="text-[20px] w-[100%] h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold" type="text" id="hari" name="hari" placeholder="DD">
+        </div>
+        <div>
+          <label for="bulan" class="tracking-[3px] text-smokeGray text-[14px] font-extrabold">MONTH</label><br>
+          <input class="text-[20px] w-[100%] h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold" type="text" id="bulan" name="bulan" placeholder="MM">
+        </div>
+        <div>
+          <label for="tahun" class="tracking-[3px] text-smokeGray text-[14px] font-extrabold">YEAR</label><br>
+          <input class="text-[20px] w-[100%] h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold" type="text" id="tahun" name="tahun" placeholder="YYYY">
+        </div> 
+      </div>
+      <button class="bg-purple flex p-5 rounded-full relative left-[50%] bottom-[32px] translate-x-[-50%]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg></button>
+    </form>
+    <div class="flex font-Poppins flex-col w-[100%]">
+      <p class="text-[56px] pl-6 pb-12 font-extrabold tracking-[-1px] italic leading-none"><span class="text-purple">38</span> years <br>
+      <span class="text-purple">3</span> months <br>
+      <span class="text-purple">26</span> days</p>
+    </div>
+  </div>
+  <div class="p-6 font-Poppins text-center">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Muharim">Muharim Awaluddin</a>.
+  </div>
+</body>
+</html>
