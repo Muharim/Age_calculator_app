@@ -37,34 +37,40 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
 <body class="bg-offWhite flex items-center flex-col pt-20 h-screen Laptop:justify-center">
-  <div class="flex flex-col w-[92%] bg-white justify-center rounded-3xl rounded-br-[100px] Laptop:w-[50%]">
-    <form class="h-fit font-Hanken px-6 Laptop:px-10">
-      <div class="flex items-center flex-row gap-4 pt-12 pb-16 border-b Laptop:items-start Laptop:items-none Laptop:pt-10 Laptop:pb-9">
-        <div>
-          <label for="hari" class="tracking-[3px] text-smokeGray text-[14px] font-extrabold">DAY</label><br> 
-          <input class="text-[20px] w-[100%] h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:w-[60%]" type="text" id="hari" name="hari" required="required" placeholder="DD" minlength="1" maxlength="2">
+  <div class="flex flex-col w-[92%] bg-white justify-center rounded-3xl rounded-br-[100px] Laptop:w-[46%] Laptop:rounded-br-[160px]">
+    <form id="form" class="h-fit font-Hanken px-6 Laptop:px-10">
+      <div class=" pt-12 pb-16 border-b Laptop:items-start Laptop:items-none Laptop:pt-10 Laptop:pb-9">
+        <div class="flex flex-row gap-4 Laptop:w-[75%] Laptop:gap-6">
+          <div class="flex flex-col w-fit">
+            <label id="tDay" for="hari" class="w-fit tracking-[3px] text-smokeGray text-[14px] font-extrabold">DAY</label>
+            <input id="iDay" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="hari" name="hari" placeholder="DD" minlength="1" maxlength="2">
+            <p id="error-hari" class="text-red-400 text-sm italic hidden">This field is required</p>
+          </div>
+          <div class="flex flex-col w-fit">
+            <label id="tMonth" for="bulan" class="w-fit tracking-[3px] text-smokeGray text-[14px] font-extrabold">MONTH</label>
+            <input id="iMonth" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="bulan" name="bulan" placeholder="MM" minlength="1" maxlength="2">
+            <p id="error-bulan" class="text-red-400 text-sm italic hidden">This field is required</p>
+          </div>
+          <div class="flex flex-col w-fit">
+            <label id="tYear" for="tahun" class="w-fit tracking-[3px] text-smokeGray text-[14px] font-extrabold">YEAR</label>
+            <input id="iYear" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="tahun" name="tahun" placeholder="YYYY" minlength="1" maxlength="4">
+            <p id="error-tahun" class="text-red-400 text-sm italic hidden">This field is required</p>
+          </div> 
         </div>
-        <div>
-          <label for="bulan" class="tracking-[3px] text-smokeGray text-[14px] font-extrabold">MONTH</label><br>
-          <input class="text-[20px] w-[100%] h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:w-[60%]" type="text" id="bulan" name="bulan" required="required" placeholder="MM" minlength="1" maxlength="2">
-        </div>
-        <div>
-          <label for="tahun" class="tracking-[3px] text-smokeGray text-[14px] font-extrabold">YEAR</label><br>
-          <input class="text-[20px] w-[100%] h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:w-[60%]" type="text" id="tahun" name="tahun" required="required" placeholder="YYYY" minlength="1" maxlength="4">
-        </div> 
       </div>
-      <button id="button" onclick="Submit()" class="bg-purple flex p-5 rounded-full relative left-[50%] translate-x-[-50%] bottom-[32px] hover:bg-offBlack Laptop:left-[95%]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg></button>
+      <button id="button" onclick="Submit()" class="bg-purple flex p-4 rounded-full relative left-[50%] translate-x-[-50%] bottom-[32px] hover:bg-offBlack Laptop:left-[95%]"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg></button>
     </form>
     <div class="flex font-Poppins flex-col w-[100%]">
-      <p class="text-[56px] pl-6 pb-12 font-extrabold tracking-[-1px] italic leading-none Laptop:text-[76px] Laptop:pl-10 Laptop:leading-[86px]">
+      <p class="text-[50px] pl-6 pb-12 font-extrabold tracking-[-1px] italic leading-none Laptop:text-[90px] Laptop:pl-10 Laptop:leading-[94px] Laptop:relative Laptop:bottom-[20px] Laptop:pb-8">
       <span class="text-purple" id="years">--</span> years <br>
-      <span class="text-purple" id="month">--</span> months <br>
-      <span class="text-purple" id="days">----</span> days</p>
+      <span class="text-purple" id="months">--</span> months <br>
+      <span class="text-purple" id="days">--</span> days</p>
     </div>
   </div>
   <div class="p-6 font-Poppins text-center">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/Muharim">Muharim Awaluddin</a>.
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
