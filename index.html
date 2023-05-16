@@ -43,18 +43,21 @@
         <div class="flex flex-row gap-4 Laptop:w-[75%] Laptop:gap-6">
           <div class="flex flex-col w-fit">
             <label id="tDay" for="hari" class="w-fit tracking-[3px] text-smokeGray text-[14px] font-extrabold">DAY</label>
-            <input id="iDay" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="hari" name="hari" placeholder="DD" minlength="1" maxlength="2">
+            <input id="iDay" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="hari" name="hari" placeholder="DD">
             <p id="error-hari" class="text-red-400 text-sm italic hidden">This field is required</p>
+            <p id="val-hari" class="text-red-400 text-sm italic hidden">Most be a valid day</p>
           </div>
           <div class="flex flex-col w-fit">
             <label id="tMonth" for="bulan" class="w-fit tracking-[3px] text-smokeGray text-[14px] font-extrabold">MONTH</label>
-            <input id="iMonth" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="bulan" name="bulan" placeholder="MM" minlength="1" maxlength="2">
+            <input id="iMonth" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="bulan" name="bulan" placeholder="MM">
             <p id="error-bulan" class="text-red-400 text-sm italic hidden">This field is required</p>
+            <p id="val-bulan" class="text-red-400 text-sm italic hidden">Most be a valid month</p>
           </div>
           <div class="flex flex-col w-fit">
             <label id="tYear" for="tahun" class="w-fit tracking-[3px] text-smokeGray text-[14px] font-extrabold">YEAR</label>
-            <input id="iYear" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="tahun" name="tahun" placeholder="YYYY" minlength="1" maxlength="4">
+            <input id="iYear" class="text-[20px] w-full h-14 rounded-[8px] border-solid border-[1px] border-offWhite px-[12px] font-bold Laptop:text-[24px] Laptop:px-[18px] " type="number" id="tahun" name="tahun" placeholder="YYYY">
             <p id="error-tahun" class="text-red-400 text-sm italic hidden">This field is required</p>
+            <p id="val-tahun" class="text-red-400 text-sm italic hidden">Most be in the post</p>
           </div> 
         </div>
       </div>
