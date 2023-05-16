@@ -1,19 +1,19 @@
 function Submit() {
-    var d1 = document.getElementById('iDay').value;
-    var m1 = document.getElementById('iMonth').value;
-    var y1 = document.getElementById('iYear').value;
-    var errH = document.getElementById('error-hari').classList;
-    var errB = document.getElementById('error-bulan').classList;
-    var errT = document.getElementById('error-tahun').classList;
-    var valH = document.getElementById('val-hari').classList;
-    var valB = document.getElementById('val-bulan').classList;
-    var valT = document.getElementById('val-tahun').classList;
-    var td = document.getElementById('tDay').classList;
-    var tb = document.getElementById('tMonth').classList;
-    var tt = document.getElementById('tYear').classList;
-    var ih = document.getElementById('iDay').classList;
-    var ib = document.getElementById('iMonth').classList;
-    var it = document.getElementById('iYear').classList;
+  var d1 = document.getElementById('iDay').value;
+  var m1 = document.getElementById('iMonth').value;
+  var y1 = document.getElementById('iYear').value;
+  var errH = document.getElementById('error-hari').classList;
+  var errB = document.getElementById('error-bulan').classList;
+  var errT = document.getElementById('error-tahun').classList;
+  var valH = document.getElementById('val-hari').classList;
+  var valB = document.getElementById('val-bulan').classList;
+  var valT = document.getElementById('val-tahun').classList;
+  var td = document.getElementById('tDay').classList;
+  var tb = document.getElementById('tMonth').classList;
+  var tt = document.getElementById('tYear').classList;
+  var ih = document.getElementById('iDay').classList;
+  var ib = document.getElementById('iMonth').classList;
+  var it = document.getElementById('iYear').classList;
 
     if (d1 === "" || m1 === "" || y1 === "") {
       if (d1 === ""){
@@ -24,7 +24,6 @@ function Submit() {
         ih.remove('border-offWhite')
         ih.add('border-red-400')
       }
-      
       if (m1 === ""){
         errB.remove('hidden')
         errB.add('block')
@@ -82,8 +81,8 @@ function Submit() {
     var m = m2 - m1;
     var y = y2 - y1;
 
-    if (d < 0 || m < 0 || y < 0) {
-      if (d < 0){
+    if (d < 0 || m < 0 || y < 0 || d1 > jBulan[m+1] || m1 > 12 || y1 > y2) {
+      if (d < 0 || d1 > jBulan[m+1]){
         valH.remove('hidden')
         valH.add('block')
         td.remove('text-smokeGray')
@@ -91,8 +90,7 @@ function Submit() {
         ih.remove('border-offWhite')
         ih.add('border-red-400')
       }
-      
-      if (m < 0){
+      if (m < 0 || m1 > 12){
         valB.remove('hidden')
         valB.add('block')
         tb.remove('text-smokeGray')
@@ -100,7 +98,7 @@ function Submit() {
         ib.remove('border-offWhite')
         ib.add('border-red-400')
       }
-      if (y < 0){
+      if (y < 0 || y1 > y2){
         valT.remove('hidden')
         valT.add('block')
         tt.remove('text-smokeGray')
@@ -135,8 +133,50 @@ function Submit() {
     document.getElementById('months').innerText= m;
     document.getElementById('days').innerText= d;
   }
+  
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
   Submit();
 })
 
+document.getElementById( 'iDay' ).addEventListener( 'input', () => {
+  document.getElementById( 'error-hari' ).classList.remove( 'block' );
+  document.getElementById( 'error-hari' ).classList.add( 'hidden' );
+
+  document.getElementById( 'val-hari' ).classList.remove( 'block' );
+  document.getElementById( 'val-hari' ).classList.add( 'hidden' );
+
+  document.getElementById( 'tDay' ).classList.add( 'text-smokeGray' );
+  document.getElementById( 'tDay' ).classList.remove( 'text-red-400' );
+
+  document.getElementById( 'iDay' ).classList.add( 'border-offWhite' );
+  document.getElementById( 'iDay' ).classList.remove( 'border-red-400' );
+} );
+
+document.getElementById( 'iMonth' ).addEventListener( 'input', () => {
+  document.getElementById( 'error-bulan' ).classList.remove( 'block' );
+  document.getElementById( 'error-bulan' ).classList.add( 'hidden' );
+
+  document.getElementById( 'val-bulan' ).classList.remove( 'block' );
+  document.getElementById( 'val-bulan' ).classList.add( 'hidden' );
+
+  document.getElementById( 'tMonth' ).classList.add( 'text-smokeGray' );
+  document.getElementById( 'tMonth' ).classList.remove( 'text-red-400' );
+
+  document.getElementById( 'iMonth' ).classList.add( 'border-offWhite' );
+  document.getElementById( 'iMonth' ).classList.remove( 'border-red-400' );
+} );
+
+document.getElementById( 'iYear' ).addEventListener( 'input', () => {
+  document.getElementById( 'error-tahun' ).classList.remove( 'block' );
+  document.getElementById( 'error-tahun' ).classList.add( 'hidden' );
+
+  document.getElementById( 'val-tahun' ).classList.remove( 'block' );
+  document.getElementById( 'val-tahun' ).classList.add( 'hidden' );
+
+  document.getElementById( 'tYear' ).classList.add( 'text-smokeGray' );
+  document.getElementById( 'tYear' ).classList.remove( 'text-red-400' );
+
+  document.getElementById( 'iYear' ).classList.add( 'border-offWhite' );
+  document.getElementById( 'iYear' ).classList.remove( 'border-red-400' );
+} );
